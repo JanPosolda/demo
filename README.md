@@ -1,4 +1,8 @@
 # demo
+
+## Prerekvizity
+PHP 7.1, Apache, databáze MySQL 5.7
+
 ## Instalace
 ```bash
 $ composer install
