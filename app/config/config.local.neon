@@ -1,0 +1,12 @@
+parameters:
+    system:
+        passwordSalt: 'lJwXMB_A_J'
+
+
+doctrine:
+	host: 'localhost'
+	user: 'root'
+	password: ''
+	dbname: 'demo'
+	metadata:
+		App\Entities: %appDir%

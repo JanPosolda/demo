@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="user-register">
+    <label for="name">Jméno</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <label for="password">Heslo</label>
+    <input type="password" id="password" name="password">
+
+    <label for="role">Oprávnění</label>
+    <select id="role" name="role">
+        <option value="user">Uživatel</option>
+        <option value="admin">Administrator</option>
+    </select>
+
+    <input type="submit" value="Odeslat">
+</form>
+<br>
+<button id="get-users">Vrať seznam uživatelů</button>
+<hr>
+
+<table>
+    <thead>
+    <tr>
+        <th>Jméno</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Vytvořen</th>
+    </tr>
+    </thead>
+    <tbody id="user-table-body">
+
+    </tbody>
+</table>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    var apiUrl = 'api/user';
+    var apiKey = 'AsgBspR8hhy6WzjBNKrE0exuG';
+
+    $(function () {
+        $('#get-users').on('click', function () {
+            $.ajax({
+                type: 'GET',
+                url: apiUrl,
+                headers: {"Authorization": apiKey},
+                dataType: 'json',
+            }).done((response) => {
+                if (response.status){
+                    var tableBodyEl = $('#user-table-body');
+                    tableBodyEl.empty();
+                    for (var i = 0; i < response.data.length; i++){
+                        tableBodyEl.append('<tr><td>'+response.data[i].name+'</td><td>'+response.data[i].email+'</td><td>'+response.data[i].role+'</td><td>'+response.data[i].created.date+'</td></tr>');
+                    }
+                } else {
+                    alert(response.message);
+                }
+            });
+        });
+
+
+        $('#user-register').on('submit', function (e) {
+            e.preventDefault();
+
+            var form = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: apiUrl,
+                headers: {"Authorization": apiKey},
+                data:  form,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+            }).done((response) => {
+                if (response.status){
+                    alert('User was created');
+                } else {
+                    alert(response.message);
+                }
+                $('#user-register')[0].reset();
+            });
+        })
+    });
+</script>
+
+</html>
