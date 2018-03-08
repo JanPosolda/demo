@@ -18,7 +18,7 @@ $ composer install
 * *models/Helpers.php* - třída s pomocnými funkcemi
 * *presenters/ApiPresenter.php* - zpracování api požadavků 
 * *services/UserService.php* - funkce pro práci s databází
-* *www/demo.html* - formulář pro registraci uživatele + výpis seznamu uživatelů
+* *www/demo.html* - formulář pro registraci uživatele + výpis seznamu uživatelů, volá api funkce aplikace
 
 ### Příklad spuštění
 DocumentRoot nastavit na složku *www*, přesměruje se na demo.html
