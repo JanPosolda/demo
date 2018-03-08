@@ -1,5 +1,5 @@
 # demo
-## nstalace
+## Instalace
 ```bash
 $ composer install
 ```
