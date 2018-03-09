@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+    php:
+        build: .
+        ports:
+            - 9000:80
+        links:
+            - mysql:mysql
+               
+    mysql:
+        build: ./.docker/mysql/
+        ports:
+            - 3306:3306
+
+        volumes:
+          - /var/lib/mysql
+#        environment:
+#            STARTUP_SQL: "/tmp/demo_user.sql"
+#            MYSQL_ROOT_PASSWORD: root
+#            MYSQL_DATABASE: nette
+#            MYSQL_USER: nette
+#            MYSQL_PASSWORD: nette
+#        volumes:
+#            - ./demo_user.sql:/tmp/demo_user.sql:ro
