@@ -28,4 +28,4 @@ $ composer install
 DocumentRoot nastavit na složku *www*, přesměruje se na demo.html
 
 ### Docker
-je přiložen i dockerfile, spuštění v dockeru se mi ale nepodařilo úplně dotáhnout. Aplikace se mi podařila rozjet, ale měl jsem problém s databází - vytvoření a připojení. I přesto soubory přikládám, protože to může usnadnit spuštění.
+Spuštění v dockeru se mi ale nepodařilo úplně dotáhnout. Aplikace se mi podařila rozjet, ale měl jsem problém s databází - vytvoření a připojení. I přesto soubory přikládám, protože to může usnadnit spuštění.
