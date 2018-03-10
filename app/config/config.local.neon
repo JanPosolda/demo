@@ -4,9 +4,9 @@ parameters:
 
 
 doctrine:
-	host: 'localhost'
-	user: 'root'
-	password: ''
+	host: 'mysql:3306'
+	user: 'demo'
+	password: 'demo'
 	dbname: 'demo'
 	metadata:
 		App\Entities: %appDir%
