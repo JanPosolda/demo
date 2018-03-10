@@ -26,3 +26,6 @@ $ composer install
 
 ### Příklad spuštění
 DocumentRoot nastavit na složku *www*, přesměruje se na demo.html
+
+### Docker
+Spuštění v dockeru se mi ale nepodařilo úplně dotáhnout. Aplikace se mi podařila rozjet, ale měl jsem problém s databází - vytvoření a připojení. I přesto soubory přikládám, protože to může usnadnit spuštění.
